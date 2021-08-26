@@ -35,9 +35,9 @@ namespace CachingSample.Controllers
 
                 var cacheEntryOptions = new MemoryCacheEntryOptions
                 {
-                    AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5), //expire in 5 minutes
+                    AbsoluteExpiration = DateTime.Now.AddHours(6), //expire in 6 hours
                     Priority = CacheItemPriority.High,
-                    SlidingExpiration = TimeSpan.FromDays(2), //evict if not accessed for 2 days
+                    SlidingExpiration = TimeSpan.FromMinutes(10), //evict if not accessed for 10 minutes
                     Size = 1024 //size 1MB
                 };
 
